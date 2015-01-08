@@ -2,3 +2,4 @@
 /gen
 /.settings
 .gitignore
+/.classpath
