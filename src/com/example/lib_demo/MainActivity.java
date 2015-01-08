@@ -1,5 +1,7 @@
 package com.example.lib_demo;
 
+import com.example.lib_demo.photoview.LauncherActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +11,8 @@ import android.widget.Button;
 public class MainActivity extends Activity implements View.OnClickListener {
 
 	private Button xListViewBtn, overscrollviewBtn, roundImage, httpManager;
+
+	private Button photoViewBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		httpManager = (Button) findViewById(R.id.httpmanager);
 		httpManager.setOnClickListener(this);
+
+		photoViewBtn = (Button) findViewById(R.id.photoview);
+		photoViewBtn.setOnClickListener(this);
 	}
 
 	@Override
@@ -40,6 +47,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivity(it);
 		} else if (v == httpManager) {
 			Intent it = new Intent(this, HttpQueryPhoneNumActivity.class);
+			startActivity(it);
+		} else if (v == photoViewBtn) {
+			Intent it = new Intent(this, LauncherActivity.class);
 			startActivity(it);
 		}
 	}
