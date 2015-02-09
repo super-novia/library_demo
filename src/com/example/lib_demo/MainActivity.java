@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-	private Button xListViewBtn, overscrollviewBtn, roundImage, httpManager;
+	private Button xListViewBtn, overscrollviewBtn, roundImage, httpManager, animatedexpandablelistviewBtn;
 
 	private Button photoViewBtn;
 
@@ -33,6 +33,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		photoViewBtn = (Button) findViewById(R.id.photoview);
 		photoViewBtn.setOnClickListener(this);
+
+		animatedexpandablelistviewBtn = (Button) findViewById(R.id.animatedExpandableListView);
+		animatedexpandablelistviewBtn.setOnClickListener(this);
 	}
 
 	@Override
@@ -50,6 +53,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivity(it);
 		} else if (v == photoViewBtn) {
 			Intent it = new Intent(this, LauncherActivity.class);
+			startActivity(it);
+		} else if (v == animatedexpandablelistviewBtn) {
+			Intent it = new Intent(this, AnimatedExpandableListViewActivity.class);
 			startActivity(it);
 		}
 	}
