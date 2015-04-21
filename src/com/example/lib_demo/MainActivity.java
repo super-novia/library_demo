@@ -1,18 +1,20 @@
 package com.example.lib_demo;
 
-import com.example.lib_demo.photoview.LauncherActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lib_demo.photoview.LauncherActivity;
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
 	private Button xListViewBtn, overscrollviewBtn, roundImage, httpManager, animatedexpandablelistviewBtn;
 
 	private Button photoViewBtn;
+
+	private Button timePickerBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		photoViewBtn = (Button) findViewById(R.id.photoview);
 		photoViewBtn.setOnClickListener(this);
+
+		timePickerBtn = (Button) findViewById(R.id.timePicker);
+		timePickerBtn.setOnClickListener(this);
 
 		animatedexpandablelistviewBtn = (Button) findViewById(R.id.animatedExpandableListView);
 		animatedexpandablelistviewBtn.setOnClickListener(this);
@@ -56,6 +61,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivity(it);
 		} else if (v == animatedexpandablelistviewBtn) {
 			Intent it = new Intent(this, AnimatedExpandableListViewActivity.class);
+			startActivity(it);
+		} else if (v == timePickerBtn) {
+			Intent it = new Intent(this, TimePickerActivity.class);
 			startActivity(it);
 		}
 	}
